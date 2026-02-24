@@ -1,15 +1,17 @@
 # terraform\dev.tfvars
 
-project_id  = "sabs-20"
+# -------------------------------------------------------
+project_id  = "dn-project-template" 
 region      = "asia-south1"
 environment = "dev"
-prefix      = "mlapp"
+prefix      = "sabs"
 
 labels = {
-  owner       = "ml-team"
+  owner       = "dn-team"
   environment = "dev"
 }
 
+# -------------------------------------------------------
 dataset_id       = "training_dataset_dev"
 table_id         = "features_table"
 dataset_location = "asia-south1"
@@ -20,10 +22,13 @@ bucket_force_destroy      = true
 artifacts_retention_days = 7
 data_retention_days      = 3
 
+# -------------------------------------------------------
+# f1..f5 = features, T = target (per MLOps schema)
 table_schema = [
-  { name = "feature_1", type = "FLOAT", mode = "NULLABLE" },
-  { name = "feature_2", type = "FLOAT", mode = "NULLABLE" },
-  { name = "feature_3", type = "FLOAT", mode = "NULLABLE" },
-  { name = "feature_4", type = "FLOAT", mode = "NULLABLE" },
-  { name = "feature_5", type = "FLOAT", mode = "NULLABLE" }
+  { name = "f1", type = "FLOAT", mode = "NULLABLE" },
+  { name = "f2", type = "FLOAT", mode = "NULLABLE" },
+  { name = "f3", type = "FLOAT", mode = "NULLABLE" },
+  { name = "f4", type = "FLOAT", mode = "NULLABLE" },
+  { name = "f5", type = "FLOAT", mode = "NULLABLE" },
+  { name = "T", type = "FLOAT", mode = "NULLABLE" }
 ]
